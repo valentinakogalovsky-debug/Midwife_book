@@ -39,7 +39,7 @@ export function TallyEmbed({ formId = process.env.NEXT_PUBLIC_TALLY_FORM_ID }: T
 
   return (
     <iframe
-      className="min-h-[620px] w-full rounded-card border border-line bg-surface"
+      className="min-h-[620px] w-full rounded-card border border-line/70 bg-transparent"
       src={`https://tally.so/embed/${formId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
       loading="lazy"
       title="Book request form"

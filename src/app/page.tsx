@@ -185,7 +185,7 @@ export default function HomePage() {
         title={homeContent.order.title}
         lead={homeContent.order.lead}
       >
-        <Card>
+        <Card tone="blush">
           <TallyEmbed />
           <p className="mt-5 text-sm text-muted">{homeContent.order.note}</p>
         </Card>
