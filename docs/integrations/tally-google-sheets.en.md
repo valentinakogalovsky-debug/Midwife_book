@@ -119,13 +119,20 @@ docs/scripts/google-sheets-notify-manager.gs
 const MANAGER_EMAIL = "manager@example.com";
 ```
 
-5. Create a trigger:
+5. Save the Apps Script project.
+6. Select `sendTestNotification` in the function dropdown and click `Run` to authorize email sending and verify a test email.
+7. Create a trigger:
 
 ```text
-Triggers -> Add Trigger -> onFormSubmit -> From spreadsheet -> On form submit
+Triggers -> Add Trigger
+Choose which function to run: notifyNewRows
+Choose which deployment should run: Head
+Select event source: Time-driven
+Select type of time based trigger: Minutes timer
+Select minute interval: Every minute or Every 5 minutes
 ```
 
-The manager will receive an email for each new request.
+The script will regularly check new rows added by Tally to Google Sheets and email the manager for each new request.
 
 ## 6. Test Checklist
 

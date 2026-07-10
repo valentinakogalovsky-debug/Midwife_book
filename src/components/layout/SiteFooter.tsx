@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { BrandLogo } from "@/components/visual/BrandLogo";
 
@@ -10,6 +13,12 @@ function FooterContactLink({ href, label }: { href: string; label: string }) {
 }
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  if (pathname === "/thank-you") {
+    return null;
+  }
+
   return (
     <footer className="border-t border-line bg-surface px-5 py-10 md:px-8">
       <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[1fr_1.4fr]">
