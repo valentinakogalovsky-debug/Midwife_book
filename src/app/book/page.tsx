@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Button, Card, Section } from "@/design-system/components";
 import { bookContent } from "@/content/book";
+import { BookCover } from "@/components/visual/BookCover";
+import { PhotoFrame } from "@/components/visual/PhotoFrame";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: bookContent.metadata.title,
@@ -27,13 +30,8 @@ export default function BookPage() {
               </Button>
             </div>
           </div>
-          <Card tone="blush" className="min-h-[380px]">
-            <div className="grid h-full place-items-center rounded-card border border-dashed border-burgundy/30 p-8 text-center text-muted">
-              <div>
-                <p className="font-heading text-2xl text-burgundy">Обложка электронной книги</p>
-                <p className="mt-3">Сюда поставим финальный дизайн обложки.</p>
-              </div>
-            </div>
+          <Card tone="blush" className="grid place-items-center">
+            <BookCover className="max-w-[340px]" priority />
           </Card>
         </div>
       </section>
@@ -70,17 +68,30 @@ export default function BookPage() {
       </Section>
 
       <Section title={bookContent.usage.title} tone="blush">
-        <div className="grid gap-6 md:grid-cols-[1fr_0.8fr]">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr)_340px] lg:grid-cols-[minmax(0,1.2fr)_380px]">
           <div className="space-y-5 text-lg text-muted">
-            {bookContent.usage.paragraphs.map((paragraph) => (
+            {bookContent.usage.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
-          <Card>
-            <p className="font-heading text-2xl text-burgundy">
-              Книга работает и как спокойное чтение, и как практический справочник.
+            <p>
+              <strong className="font-extrabold text-ink">{bookContent.usage.emphasis}</strong>{" "}
+              {bookContent.usage.paragraphs[2]}
             </p>
-          </Card>
+            <Card className="mt-8">
+              <p className="font-heading text-2xl text-burgundy">«{bookContent.usage.quote}»</p>
+            </Card>
+          </div>
+          <div className="grid gap-4 justify-self-center md:justify-self-end">
+            <PhotoFrame
+              alt="Михаль во время беременности"
+              className="aspect-[4/5] w-full max-w-[380px]"
+              height={2048}
+              imageClassName="scale-[1.22]"
+              objectPosition="60% center"
+              src={siteConfig.assets.michalPregnancy}
+              width={1356}
+            />
+          </div>
         </div>
       </Section>
 

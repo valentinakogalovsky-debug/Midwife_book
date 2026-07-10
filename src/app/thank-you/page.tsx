@@ -12,6 +12,22 @@ export const metadata: Metadata = {
   }
 };
 
+function ContactAction({ href, label }: { href: string; label: string }) {
+  if (!href) {
+    return (
+      <span className="inline-flex min-h-12 cursor-not-allowed items-center justify-center rounded-control border border-line bg-blushSoft px-6 py-3 text-center text-base font-bold text-muted">
+        {label}
+      </span>
+    );
+  }
+
+  return (
+    <Button href={href} variant="secondary">
+      {label}
+    </Button>
+  );
+}
+
 export default function ThankYouPage() {
   return (
     <main>
@@ -20,12 +36,8 @@ export default function ThankYouPage() {
           <p className="text-muted">{orderContent.thankYou.note}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/">{orderContent.thankYou.homeAction}</Button>
-            <Button href={siteConfig.contacts.whatsapp} variant="secondary">
-              {orderContent.thankYou.whatsappAction}
-            </Button>
-            <Button href={siteConfig.contacts.telegram} variant="secondary">
-              {orderContent.thankYou.telegramAction}
-            </Button>
+            <ContactAction href={siteConfig.contacts.whatsapp} label={orderContent.thankYou.whatsappAction} />
+            <ContactAction href={siteConfig.contacts.telegram} label={orderContent.thankYou.telegramAction} />
           </div>
         </Card>
       </Section>

@@ -15,7 +15,16 @@ export const siteConfig = {
     href: "/#order"
   },
   contacts: {
-    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_LINK ?? "#",
-    telegram: process.env.NEXT_PUBLIC_TELEGRAM_LINK ?? "#"
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_LINK ?? "",
+    telegram: process.env.NEXT_PUBLIC_TELEGRAM_LINK ?? ""
+  },
+  assets: {
+    logoHorizontal: "/images/brand/logo-horizontal.svg",
+    logoFull: "/images/brand/logo-full.svg",
+    logoCompact: "/images/brand/logo-compact.svg",
+    bookCover: "/images/book/book-cover.png",
+    michalHero: "/images/photos/michal-hero.jpg",
+    michalAtWork: "/images/photos/michal-at-work.jpg",
+    michalPregnancy: "/images/photos/michal-pregnancy.jpeg"
   }
 } as const;

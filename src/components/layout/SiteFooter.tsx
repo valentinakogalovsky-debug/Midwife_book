@@ -1,11 +1,20 @@
 import { siteConfig } from "@/config/site";
+import { BrandLogo } from "@/components/visual/BrandLogo";
+
+function FooterContactLink({ href, label }: { href: string; label: string }) {
+  if (!href) {
+    return <span className="cursor-not-allowed text-muted/60">{label}</span>;
+  }
+
+  return <a href={href}>{label}</a>;
+}
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-surface px-5 py-10 md:px-8">
       <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[1fr_1.4fr]">
         <div>
-          <p className="font-heading text-2xl font-bold text-burgundy">{siteConfig.name}</p>
+          <BrandLogo className="max-w-[180px]" variant="full" />
           <p className="mt-2 text-muted">{siteConfig.bookTitle}</p>
         </div>
         <div className="grid gap-4 text-sm text-muted">
@@ -15,8 +24,8 @@ export function SiteFooter() {
           </p>
           <div className="flex flex-wrap gap-4 font-bold text-burgundy">
             <a href="/privacy">Политика конфиденциальности</a>
-            <a href={siteConfig.contacts.whatsapp}>WhatsApp</a>
-            <a href={siteConfig.contacts.telegram}>Telegram</a>
+            <FooterContactLink href={siteConfig.contacts.whatsapp} label="WhatsApp" />
+            <FooterContactLink href={siteConfig.contacts.telegram} label="Telegram" />
           </div>
           <p>© 2026 Михаль Когаловски. Все права защищены.</p>
         </div>

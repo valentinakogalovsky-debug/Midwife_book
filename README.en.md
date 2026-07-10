@@ -12,7 +12,7 @@ The MVP should help a visitor:
 - submit a book order request;
 - choose a preferred contact channel: WhatsApp or Telegram.
 
-At the MVP stage, the website does not process payments and does not complete purchases automatically. After a request is submitted, Michal or a manager contacts the visitor manually.
+At the MVP stage, the website does not process payments and does not complete purchases automatically. After a request is submitted, Michal or a manager contacts the visitor manually. The current MVP is focused on requests for an electronic book.
 
 ## Architecture
 
@@ -46,8 +46,15 @@ Key folders and files:
 - `src/app/privacy/page.tsx` — privacy policy;
 - `src/app/thank-you/page.tsx` — thank-you page;
 - `src/app/globals.css` — global CSS variables and base typography;
+- `src/content/home.ts` — main page content;
+- `src/content/book.ts` — book page content;
+- `src/content/order.ts` — form, Tally fallback, and thank-you content;
 - `src/design-system` — project design system;
 - `src/components/layout` — shared header and footer components;
+- `src/components/visual` — visual components for the logo, book cover, and photos;
+- `public/images/brand` — logo assets;
+- `public/images/book` — book cover asset;
+- `public/images/photos` — photos for the landing page and book page;
 - `src/config/site.ts` — navigation, base contacts, and site settings.
 
 ## Design System
@@ -66,6 +73,26 @@ Core rules:
 - form fields are created through `Field`;
 - Tally is embedded through `TallyEmbed`;
 - pages use Tailwind mostly for layout grids and content arrangement.
+
+## Visual Assets
+
+The project now includes real brand visuals:
+
+- logos and favicon;
+- electronic book cover;
+- Michal’s photos for the hero section, the “About Michal” section, and `/book`.
+
+Primary image paths are centralized in `src/config/site.ts`. The site renders them through `BrandLogo`, `BookCover`, and `PhotoFrame` so image usage does not spread across page files.
+
+## Content Layer
+
+The main page texts are separated from JSX into content files:
+
+- `src/content/home.ts` — main landing page;
+- `src/content/book.ts` — detailed electronic book page;
+- `src/content/order.ts` — request form, Tally fallback, and thank-you page.
+
+If text, card order, FAQ, or button labels need to change, check these files first. Pages in `src/app` should remain mostly a composition layer.
 
 ## Pages
 
@@ -94,6 +121,10 @@ The `/thank-you` page must be excluded from search indexing.
 
 The form is created and validated in Tally.
 
+The website code is already ready to embed Tally through `TallyEmbed`, but real request submission will work only after the Tally form is created and `NEXT_PUBLIC_TALLY_FORM_ID` is set.
+
+If `NEXT_PUBLIC_TALLY_FORM_ID` is not set, the website shows a fallback block with the expected form fields and setup steps. This is the expected state before the Tally integration.
+
 Form fields:
 
 - name — required;
@@ -103,7 +134,7 @@ Form fields:
 - Telegram username — conditional field, required only if Telegram is selected;
 - consent to personal data processing — required checkbox.
 
-The MVP should not include visible fields such as city, comment, book format, or price. These details are clarified manually after the request is submitted.
+The MVP should not include visible fields such as city, comment, book format, or price. These details are clarified manually after the request is submitted. At the current stage, the product is described as an electronic book.
 
 ## Form Validation
 
@@ -230,6 +261,7 @@ Check routes:
 7. Connect the form to Google Sheets.
 8. Submit a test request.
 9. Verify that the row appears in the correct Google Sheet.
+10. Add the form ID to `.env.local` for local testing and to Vercel environment variables for production.
 
 ## Vercel Deployment
 
@@ -302,6 +334,12 @@ The MVP should include:
 - calendar integration;
 - full WhatsApp bot;
 - full Telegram sales bot.
+
+## Known npm audit warning
+
+`npm audit` may report `2 moderate severity vulnerabilities` related to a transitive `postcss` dependency bundled inside the current Next.js version.
+
+At the current setup stage, do not run `npm audit fix --force` without a separate review, because npm suggests a breaking change. The website builds and runs; this warning should be revisited during the next Next.js upgrade.
 
 ## Definition of Done
 

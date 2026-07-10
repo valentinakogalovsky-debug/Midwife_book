@@ -13,12 +13,12 @@
   --color-muted: 112 91 98;
   --color-line: 231 197 207;
 
-  --font-heading: Comfortaa, Rubik, Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
   --font-body: "Nunito Sans", Rubik, Arial, sans-serif;
 
   --radius-card: 28px;
   --radius-control: 18px;
-  --shadow-soft: 0 20px 50px rgb(125 42 67 / 0.1);
+  --shadow-soft: 0 22px 60px rgb(125 42 67 / 0.12);
 }
 
 * {
@@ -62,19 +62,22 @@ textarea {
     color: rgb(var(--color-burgundy));
     font-family: var(--font-heading);
     letter-spacing: 0;
-    line-height: 1.12;
+    line-height: 1.08;
   }
 
   h1 {
-    font-size: clamp(2.125rem, 6vw, 4rem);
+    font-size: clamp(3rem, 7vw, 5.85rem);
+    font-weight: 500;
   }
 
   h2 {
     font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 500;
   }
 
   h3 {
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    font-weight: 500;
   }
 
   p {
@@ -84,5 +87,63 @@ textarea {
   :focus-visible {
     outline: 3px solid rgb(var(--color-burgundy-soft));
     outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .ornate-card {
+    position: relative;
+    overflow: hidden;
+    background-image:
+      radial-gradient(circle at top left, rgb(var(--color-blush-soft) / 0.42), transparent 34%),
+      linear-gradient(135deg, rgb(var(--color-surface)), rgb(var(--color-background)));
+  }
+
+  .ornate-card::before,
+  .ornate-card::after {
+    position: absolute;
+    z-index: 0;
+    width: 54px;
+    height: 54px;
+    content: "";
+    opacity: 0.78;
+    pointer-events: none;
+  }
+
+  .ornate-card::before {
+    top: 14px;
+    right: 14px;
+    border-top: 2px solid rgb(var(--color-blush));
+    border-right: 2px solid rgb(var(--color-blush));
+    border-top-right-radius: 22px;
+  }
+
+  .ornate-card::after {
+    bottom: 14px;
+    left: 14px;
+    border-bottom: 2px solid rgb(var(--color-blush));
+    border-left: 2px solid rgb(var(--color-blush));
+    border-bottom-left-radius: 22px;
+  }
+
+  .ornate-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .ornate-card-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 18px;
+    border: 1px solid rgb(var(--color-line));
+    border-radius: 999px;
+    background: rgb(var(--color-blush-soft) / 0.75);
+    color: rgb(var(--color-burgundy-soft));
+    font-family: var(--font-heading);
+    font-size: 22px;
+    line-height: 1;
   }
 }
