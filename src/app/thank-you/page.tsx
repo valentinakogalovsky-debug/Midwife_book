@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button, Card, Section } from "@/design-system/components";
 import { siteConfig } from "@/config/site";
+import { orderContent } from "@/content/order";
 
 export const metadata: Metadata = {
   title: "Спасибо! Заявка отправлена",
@@ -14,18 +15,16 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <main>
-      <Section title="Спасибо! Заявка отправлена" lead="Мы получили ваши контакты. Михаль или её представитель свяжется с вами выбранным способом и расскажет о книге, оплате и получении.">
+      <Section title={orderContent.thankYou.title} lead={orderContent.thankYou.lead}>
         <Card>
-          <p className="text-muted">
-            Пожалуйста, проверьте, что в Telegram разрешены сообщения, либо что указанный номер доступен в WhatsApp.
-          </p>
+          <p className="text-muted">{orderContent.thankYou.note}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/">Вернуться на главную</Button>
+            <Button href="/">{orderContent.thankYou.homeAction}</Button>
             <Button href={siteConfig.contacts.whatsapp} variant="secondary">
-              Написать в WhatsApp
+              {orderContent.thankYou.whatsappAction}
             </Button>
             <Button href={siteConfig.contacts.telegram} variant="secondary">
-              Открыть Telegram
+              {orderContent.thankYou.telegramAction}
             </Button>
           </div>
         </Card>

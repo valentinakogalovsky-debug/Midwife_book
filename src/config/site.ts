@@ -7,6 +7,7 @@ export const siteConfig = {
     { label: "О Михаль", href: "/#about" },
     { label: "О книге", href: "/#book" },
     { label: "Что внутри", href: "/book#contents" },
+    { label: "Отзывы", href: "/#testimonials" },
     { label: "Вопросы", href: "/#faq" }
   ],
   cta: {
