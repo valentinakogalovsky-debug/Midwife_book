@@ -52,6 +52,8 @@ Key folders and files:
 - `src/design-system` — project design system;
 - `src/components/layout` — shared header and footer components;
 - `src/components/visual` — visual components for the logo, book cover, and photos;
+- `docs/integrations/tally-google-sheets.en.md` — detailed Tally, Google Sheets, and notification setup;
+- `docs/scripts/google-sheets-notify-manager.gs` — Google Apps Script template for manager email notifications;
 - `public/images/brand` — logo assets;
 - `public/images/book` — book cover asset;
 - `public/images/photos` — photos for the landing page and book page;
@@ -251,6 +253,8 @@ Check routes:
 - `http://localhost:3000/thank-you`
 
 ## Tally Setup
+
+Detailed guide: `docs/integrations/tally-google-sheets.en.md`.
 
 1. Create a Tally form for book requests.
 2. Add the fields from the “Request Form” section.
