@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: 255 248 245;
+  --color-surface: 255 255 255;
+  --color-blush: 235 157 179;
+  --color-blush-soft: 247 221 229;
+  --color-burgundy: 125 42 67;
+  --color-burgundy-soft: 163 59 86;
+  --color-ink: 73 55 61;
+  --color-muted: 112 91 98;
+  --color-line: 231 197 207;
+
+  --font-heading: Comfortaa, Rubik, Arial, sans-serif;
+  --font-body: "Nunito Sans", Rubik, Arial, sans-serif;
+
+  --radius-card: 28px;
+  --radius-control: 18px;
+  --shadow-soft: 0 20px 50px rgb(125 42 67 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgb(var(--color-blush));
+  color: rgb(var(--color-ink));
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    color: rgb(var(--color-burgundy));
+    font-family: var(--font-heading);
+    letter-spacing: 0;
+    line-height: 1.12;
+  }
+
+  h1 {
+    font-size: clamp(2.125rem, 6vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.875rem, 4vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  :focus-visible {
+    outline: 3px solid rgb(var(--color-burgundy-soft));
+    outline-offset: 3px;
+  }
+}

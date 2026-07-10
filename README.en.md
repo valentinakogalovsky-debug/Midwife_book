@@ -36,6 +36,37 @@ The MVP does not include a custom order server, SQLite, PostgreSQL, CRM, user ac
 - Vercel for deployment
 - GitHub for source control
 
+## Project Structure
+
+Key folders and files:
+
+- `src/app` — Next.js App Router routes;
+- `src/app/page.tsx` — main page;
+- `src/app/book/page.tsx` — book page;
+- `src/app/privacy/page.tsx` — privacy policy;
+- `src/app/thank-you/page.tsx` — thank-you page;
+- `src/app/globals.css` — global CSS variables and base typography;
+- `src/design-system` — project design system;
+- `src/components/layout` — shared header and footer components;
+- `src/config/site.ts` — navigation, base contacts, and site settings.
+
+## Design System
+
+The visual layer is centralized in `src/design-system` and `src/app/globals.css`.
+
+Goal: avoid spreading colors, typography, buttons, cards, fields, and sections across page-level Tailwind class strings.
+
+Core rules:
+
+- colors and fonts are defined as CSS variables in `src/app/globals.css`;
+- Tailwind tokens are mapped to those variables in `tailwind.config.ts`;
+- buttons are created through `Button`;
+- cards are created through `Card`;
+- page sections are created through `Section`;
+- form fields are created through `Field`;
+- Tally is embedded through `TallyEmbed`;
+- pages use Tailwind mostly for layout grids and content arrangement.
+
 ## Pages
 
 - `/` — main landing page
@@ -163,10 +194,15 @@ Only `.env.example` with empty placeholder values should be committed. `.env.loc
 
 ## Local Development
 
-After creating the Next.js project:
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Run the project:
+
+```bash
 npm run dev
 ```
 
