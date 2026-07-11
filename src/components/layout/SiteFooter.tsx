@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { BrandLogo } from "@/components/visual/BrandLogo";
+import { Button } from "@/design-system/components";
 
 function FooterContactLink({ href, label }: { href: string; label: string }) {
   if (!href) {
@@ -31,6 +32,19 @@ export function SiteFooter() {
           <p className="mt-2 text-muted">{siteConfig.bookTitle}</p>
         </div>
         <div className="grid gap-4 text-sm text-muted">
+          <nav
+            aria-label="Навигация в подвале"
+            className="flex flex-wrap items-center gap-x-5 gap-y-3 font-bold text-ink"
+          >
+            {siteConfig.nav.map((item) => (
+              <a className="transition hover:text-burgundy" href={item.href} key={item.href}>
+                {item.label}
+              </a>
+            ))}
+            <Button className="min-h-10 px-4 py-2 text-sm" href={siteConfig.cta.href}>
+              {siteConfig.cta.label}
+            </Button>
+          </nav>
           <p>
             Материалы сайта и книги носят информационный характер и не заменяют консультацию врача,
             диагностику или индивидуальные медицинские рекомендации.
