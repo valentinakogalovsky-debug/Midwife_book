@@ -111,6 +111,10 @@ export default function HomePage() {
             {homeContent.bookIntro.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <div className="rounded-card border border-line/80 bg-surface p-5 shadow-soft">
+              <p className="font-heading text-2xl text-burgundy">{homeContent.bookIntro.formatCard.title}</p>
+              <p className="mt-3 text-base text-muted">{homeContent.bookIntro.formatCard.text}</p>
+            </div>
             <p className="font-bold text-burgundy">{homeContent.bookIntro.accent}</p>
             <div className="flex flex-wrap gap-3">
               <Button href="/book">Подробнее о книге</Button>
