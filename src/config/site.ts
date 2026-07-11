@@ -45,6 +45,7 @@ export const siteConfig = {
     logoFull: "/images/brand/logo-full.svg",
     logoCompact: "/images/brand/logo-compact.svg",
     bookCover: "/images/book/book-cover.png",
+    bookOnTable: "/images/book/book-on-table.png",
     michalHero: "/images/photos/michal-hero.jpg",
     michalAtWork: "/images/photos/michal-at-work.jpg",
     michalPregnancy: "/images/photos/michal-pregnancy.jpeg"
