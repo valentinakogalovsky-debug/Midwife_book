@@ -219,11 +219,15 @@ Telegram: -
 
 ```env
 NEXT_PUBLIC_TALLY_FORM_ID=
+NEXT_PUBLIC_SITE_URL=
 NEXT_PUBLIC_WHATSAPP_LINK=
 NEXT_PUBLIC_WHATSAPP_PHONE=
 NEXT_PUBLIC_TELEGRAM_LINK=
 NEXT_PUBLIC_TELEGRAM_USERNAME=
 ```
+
+`NEXT_PUBLIC_SITE_URL` должен быть равен публичному адресу сайта на продакшене, например
+`https://example.com`. Он используется для sitemap, robots.txt и социальных превью.
 
 Для WhatsApp можно указать либо готовую ссылку `NEXT_PUBLIC_WHATSAPP_LINK`, либо номер
 `NEXT_PUBLIC_WHATSAPP_PHONE` в международном формате. Для Telegram можно указать либо

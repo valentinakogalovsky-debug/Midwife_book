@@ -219,11 +219,15 @@ Initial variables:
 
 ```env
 NEXT_PUBLIC_TALLY_FORM_ID=
+NEXT_PUBLIC_SITE_URL=
 NEXT_PUBLIC_WHATSAPP_LINK=
 NEXT_PUBLIC_WHATSAPP_PHONE=
 NEXT_PUBLIC_TELEGRAM_LINK=
 NEXT_PUBLIC_TELEGRAM_USERNAME=
 ```
+
+`NEXT_PUBLIC_SITE_URL` must match the public production URL, for example
+`https://example.com`. It is used for sitemap, robots.txt, and social previews.
 
 For WhatsApp, use either a ready-made `NEXT_PUBLIC_WHATSAPP_LINK` or a phone number in
 international format via `NEXT_PUBLIC_WHATSAPP_PHONE`. For Telegram, use either
