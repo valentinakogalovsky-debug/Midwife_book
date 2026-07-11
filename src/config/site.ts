@@ -1,3 +1,23 @@
+function buildWhatsAppLink() {
+  const directLink = process.env.NEXT_PUBLIC_WHATSAPP_LINK?.trim();
+  if (directLink) {
+    return directLink;
+  }
+
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE?.replace(/\D/g, "");
+  return phone ? `https://wa.me/${phone}` : "";
+}
+
+function buildTelegramLink() {
+  const directLink = process.env.NEXT_PUBLIC_TELEGRAM_LINK?.trim();
+  if (directLink) {
+    return directLink;
+  }
+
+  const username = process.env.NEXT_PUBLIC_TELEGRAM_USERNAME?.trim().replace(/^@/, "");
+  return username ? `https://t.me/${username}` : "";
+}
+
 export const siteConfig = {
   name: "Михаль Когаловски",
   bookTitle: "Роды с холодной головой",
@@ -15,8 +35,10 @@ export const siteConfig = {
     href: "/#order"
   },
   contacts: {
-    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_LINK ?? "",
-    telegram: process.env.NEXT_PUBLIC_TELEGRAM_LINK ?? ""
+    whatsapp: buildWhatsAppLink(),
+    telegram: buildTelegramLink(),
+    email: "Michal.kogalovski@gmail.com",
+    postalAddress: "Snir st., 1, Hadera, Israel"
   },
   assets: {
     logoHorizontal: "/images/brand/logo-horizontal.svg",

@@ -187,7 +187,13 @@ export default function HomePage() {
       >
         <Card tone="blush">
           <TallyEmbed />
-          <p className="mt-5 text-sm text-muted">{homeContent.order.note}</p>
+          <p className="mt-5 text-sm text-muted">
+            {homeContent.order.note} Отправляя заявку, вы соглашаетесь с{" "}
+            <a className="font-bold text-burgundy underline-offset-4 hover:underline" href="/privacy">
+              Политикой конфиденциальности
+            </a>
+            .
+          </p>
         </Card>
       </Section>
 

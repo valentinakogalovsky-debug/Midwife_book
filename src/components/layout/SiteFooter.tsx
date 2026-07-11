@@ -9,7 +9,11 @@ function FooterContactLink({ href, label }: { href: string; label: string }) {
     return <span className="cursor-not-allowed text-muted/60">{label}</span>;
   }
 
-  return <a href={href}>{label}</a>;
+  return (
+    <a href={href} rel="noopener noreferrer" target="_blank">
+      {label}
+    </a>
+  );
 }
 
 export function SiteFooter() {

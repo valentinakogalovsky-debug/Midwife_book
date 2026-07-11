@@ -220,8 +220,14 @@ Telegram: -
 ```env
 NEXT_PUBLIC_TALLY_FORM_ID=
 NEXT_PUBLIC_WHATSAPP_LINK=
+NEXT_PUBLIC_WHATSAPP_PHONE=
 NEXT_PUBLIC_TELEGRAM_LINK=
+NEXT_PUBLIC_TELEGRAM_USERNAME=
 ```
+
+Для WhatsApp можно указать либо готовую ссылку `NEXT_PUBLIC_WHATSAPP_LINK`, либо номер
+`NEXT_PUBLIC_WHATSAPP_PHONE` в международном формате. Для Telegram можно указать либо
+`NEXT_PUBLIC_TELEGRAM_LINK`, либо username в `NEXT_PUBLIC_TELEGRAM_USERNAME`.
 
 В репозиторий должен попасть только `.env.example` без реальных значений. Файлы `.env.local` и production-секреты не коммитятся.
 
@@ -319,7 +325,7 @@ http://localhost:3000
 - логотип в SVG/PNG и favicon;
 - отзывы и согласие на публикацию;
 - данные владельца сайта для политики конфиденциальности;
-- финальный юридический текст `/privacy`;
+- юридическая проверка черновика `/privacy` перед публикацией;
 - домен.
 
 ## Что не входит в MVP

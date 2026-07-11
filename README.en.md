@@ -220,8 +220,14 @@ Initial variables:
 ```env
 NEXT_PUBLIC_TALLY_FORM_ID=
 NEXT_PUBLIC_WHATSAPP_LINK=
+NEXT_PUBLIC_WHATSAPP_PHONE=
 NEXT_PUBLIC_TELEGRAM_LINK=
+NEXT_PUBLIC_TELEGRAM_USERNAME=
 ```
+
+For WhatsApp, use either a ready-made `NEXT_PUBLIC_WHATSAPP_LINK` or a phone number in
+international format via `NEXT_PUBLIC_WHATSAPP_PHONE`. For Telegram, use either
+`NEXT_PUBLIC_TELEGRAM_LINK` or a username in `NEXT_PUBLIC_TELEGRAM_USERNAME`.
 
 Only `.env.example` with empty placeholder values should be committed. `.env.local` and production secrets must not be committed.
 
@@ -319,7 +325,7 @@ The MVP should include:
 - logo in SVG/PNG and favicon;
 - testimonials and permission to publish them;
 - website owner details for the privacy policy;
-- final legal text for `/privacy`;
+- legal review of the `/privacy` draft before publication;
 - domain.
 
 ## Out of MVP Scope

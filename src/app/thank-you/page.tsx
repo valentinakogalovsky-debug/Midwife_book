@@ -22,7 +22,7 @@ function ContactAction({ href, label }: { href: string; label: string }) {
   }
 
   return (
-    <Button href={href} variant="secondary">
+    <Button href={href} rel="noopener noreferrer" target="_blank" variant="secondary">
       {label}
     </Button>
   );
