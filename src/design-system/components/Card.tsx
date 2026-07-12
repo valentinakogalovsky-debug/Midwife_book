@@ -12,7 +12,7 @@ export function Card({ children, tone = "surface", decorative = true, className 
 
   return (
     <div
-      className={`rounded-card border border-line/80 ${toneClass} ${decorativeClass} p-6 shadow-soft md:p-8 ${className}`}
+      className={`rounded-card border border-line/80 ${toneClass} ${decorativeClass} p-5 shadow-soft sm:p-6 md:p-8 ${className}`}
       {...props}
     >
       {children}

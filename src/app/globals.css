@@ -34,7 +34,7 @@ body {
   background: rgb(var(--color-background));
   color: rgb(var(--color-ink));
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -66,12 +66,12 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(3rem, 7vw, 5.85rem);
+    font-size: clamp(2.45rem, 10vw, 5.85rem);
     font-weight: 500;
   }
 
   h2 {
-    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 8vw, 3rem);
     font-weight: 500;
   }
 
@@ -145,5 +145,23 @@ textarea {
     font-family: var(--font-heading);
     font-size: 22px;
     line-height: 1;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --radius-card: 22px;
+    --radius-control: 16px;
+    --shadow-soft: 0 16px 42px rgb(125 42 67 / 0.1);
+  }
+
+  body {
+    line-height: 1.58;
+  }
+
+  .ornate-card::before,
+  .ornate-card::after {
+    width: 42px;
+    height: 42px;
   }
 }

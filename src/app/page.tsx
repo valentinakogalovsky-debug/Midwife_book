@@ -6,16 +6,16 @@ import { siteConfig } from "@/config/site";
 export default function HomePage() {
   return (
     <main>
-      <section className="px-5 py-14 md:px-8 md:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.82fr)]">
+      <section className="px-4 py-10 sm:px-5 sm:py-14 md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.82fr)] lg:gap-10">
           <div>
             <p className="mb-4 text-sm font-extrabold uppercase text-burgundySoft">
               {homeContent.hero.eyebrow}
             </p>
-            <h1 className="max-w-[760px] text-[clamp(2.85rem,5vw,4.85rem)] leading-[1.04]">
+            <h1 className="max-w-[760px] text-[clamp(2.45rem,12vw,4.85rem)] leading-[1.04]">
               {homeContent.hero.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-xl text-muted">{homeContent.hero.lead}</p>
+            <p className="mt-5 max-w-2xl text-lg text-muted sm:text-xl">{homeContent.hero.lead}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {homeContent.hero.facts.map((fact) => (
                 <span
@@ -36,7 +36,7 @@ export default function HomePage() {
           <Card tone="blush" className="grid place-items-center p-4 sm:p-5">
             <PhotoFrame
               alt="Михаль Когаловски с новорождённым в роддоме"
-              className="aspect-[4/5] w-full max-w-[500px]"
+              className="aspect-[4/5] w-full max-w-[420px] lg:max-w-[500px]"
               height={1363}
               objectPosition="center"
               priority
@@ -67,19 +67,19 @@ export default function HomePage() {
 
       <Section id="about" eyebrow={homeContent.about.eyebrow} title={homeContent.about.title}>
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.72fr)]">
-          <div className="space-y-5 text-lg text-muted">
+          <div className="space-y-5 text-base text-muted sm:text-lg">
             {homeContent.about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <Card className="mt-8">
-              <p className="font-heading text-2xl text-burgundy">«{homeContent.about.quote}»</p>
+              <p className="font-heading text-xl text-burgundy sm:text-2xl">«{homeContent.about.quote}»</p>
               <p className="mt-5 font-extrabold text-burgundy">{homeContent.about.quoteAuthor}</p>
             </Card>
           </div>
           <div className="grid gap-4">
             <PhotoFrame
               alt="Михаль Когаловски на работе с новорождённым"
-              className="min-h-[360px]"
+              className="min-h-[300px] md:min-h-[360px]"
               height={2240}
               objectPosition="center top"
               src={siteConfig.assets.michalAtWork}
@@ -112,7 +112,7 @@ export default function HomePage() {
               width={1448}
             />
           </Card>
-          <div className="space-y-6 text-lg text-muted">
+          <div className="space-y-5 text-base text-muted sm:text-lg">
             {homeContent.bookIntro.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -158,7 +158,7 @@ export default function HomePage() {
           {homeContent.bookParts.items.map((part, index) => (
             <Card key={part.title}>
               <p className="mb-4 font-heading text-3xl text-burgundy">{index + 1}</p>
-              <h3 className="text-[clamp(1.45rem,1.7vw,1.7rem)]">{part.title}</h3>
+              <h3 className="text-[clamp(1.35rem,6vw,1.7rem)]">{part.title}</h3>
               <p className="mt-4 text-sm text-muted">{part.text}</p>
             </Card>
           ))}

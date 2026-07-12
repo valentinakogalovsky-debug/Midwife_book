@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <main>
-      <section className="px-5 py-16 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1fr_0.8fr]">
+      <section className="px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_0.8fr] md:gap-10">
           <div>
             <p className="mb-4 text-sm font-extrabold uppercase text-burgundySoft">
               {bookContent.hero.eyebrow}
             </p>
             <h1>{bookContent.hero.title}</h1>
-            <p className="mt-6 max-w-2xl text-xl text-muted">{bookContent.hero.lead}</p>
+            <p className="mt-5 max-w-2xl text-lg text-muted sm:text-xl">{bookContent.hero.lead}</p>
             <p className="mt-5 font-bold text-burgundy">{bookContent.hero.author}</p>
-            <p className="mt-5 max-w-2xl font-heading text-2xl text-burgundy">«{bookContent.hero.quote}»</p>
+            <p className="mt-5 max-w-2xl font-heading text-xl text-burgundy sm:text-2xl">«{bookContent.hero.quote}»</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/#order">{bookContent.hero.primaryAction}</Button>
               <Button href="#contents" variant="secondary">
@@ -31,14 +31,14 @@ export default function BookPage() {
             </div>
           </div>
           <Card tone="blush" className="grid place-items-center">
-            <BookCover className="max-w-[340px]" priority />
+            <BookCover className="max-w-[260px] sm:max-w-[320px] md:max-w-[340px]" priority />
           </Card>
         </div>
       </section>
 
       <Section title={bookContent.purpose.title} lead={bookContent.purpose.lead} tone="blush">
         <Card>
-          <p className="font-heading text-2xl text-burgundy">«{bookContent.purpose.quote}»</p>
+          <p className="font-heading text-xl text-burgundy sm:text-2xl">«{bookContent.purpose.quote}»</p>
         </Card>
       </Section>
 
@@ -47,7 +47,7 @@ export default function BookPage() {
           {bookContent.contents.parts.map((part) => (
             <Card key={part.number}>
               <div className="grid gap-5 md:grid-cols-[88px_1fr]">
-                <p className="font-heading text-4xl text-burgundy">{part.number}</p>
+                <p className="font-heading text-3xl text-burgundy sm:text-4xl">{part.number}</p>
                 <div>
                   <h3>{part.title}</h3>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -69,7 +69,7 @@ export default function BookPage() {
 
       <Section title={bookContent.usage.title} tone="blush">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr)_340px] lg:grid-cols-[minmax(0,1.2fr)_380px]">
-          <div className="space-y-5 text-lg text-muted">
+          <div className="space-y-5 text-base text-muted sm:text-lg">
             {bookContent.usage.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -78,7 +78,7 @@ export default function BookPage() {
               {bookContent.usage.paragraphs[2]}
             </p>
             <Card className="mt-8">
-              <p className="font-heading text-2xl text-burgundy">«{bookContent.usage.quote}»</p>
+              <p className="font-heading text-xl text-burgundy sm:text-2xl">«{bookContent.usage.quote}»</p>
             </Card>
           </div>
           <div className="grid gap-4 justify-self-center md:justify-self-end">

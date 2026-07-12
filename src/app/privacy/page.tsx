@@ -252,7 +252,7 @@ export default function PrivacyPage() {
         title="Политика конфиденциальности и обработки персональных данных"
         lead="Настоящая Политика определяет порядок сбора, использования, хранения, передачи и защиты персональных данных посетителей сайта Михаль Когаловски."
       >
-        <Card className="space-y-8">
+        <Card className="space-y-8 break-words">
           <div className="space-y-2 rounded-control bg-blushSoft px-5 py-4 text-sm font-bold text-burgundy">
             <p>Дата вступления в силу: {effectiveDate}</p>
             <p>Дата последнего обновления: {lastUpdatedDate}</p>
