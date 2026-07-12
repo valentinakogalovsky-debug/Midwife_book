@@ -20,7 +20,8 @@ function buildTelegramLink() {
 
 export const siteConfig = {
   name: "Михаль Когаловски",
-  bookTitle: "Роды с холодной головой",
+  bookTitle: "Спокойно, ты беременна!",
+  bookSubtitle: "Гид по беременности и родам в Израиле",
   description:
     "Практическое руководство для русскоязычных женщин о беременности и родах в Израиле.",
   nav: [
@@ -44,8 +45,8 @@ export const siteConfig = {
     logoHorizontal: "/images/brand/logo-horizontal.svg",
     logoFull: "/images/brand/logo-full.svg",
     logoCompact: "/images/brand/logo-compact.svg",
-    bookCover: "/images/book/book-cover.png",
-    bookOnTable: "/images/book/book-on-table.png",
+    bookCover: "/images/book/book-cover-3d.png",
+    bookOnTable: "/images/book/book-on-table-latest.png",
     michalHero: "/images/photos/michal-hero.jpg",
     michalAtWork: "/images/photos/michal-at-work.jpg",
     michalPregnancy: "/images/photos/michal-pregnancy.jpeg"

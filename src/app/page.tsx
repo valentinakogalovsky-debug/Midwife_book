@@ -1,5 +1,6 @@
 import { Button, Card, Section, TallyEmbed } from "@/design-system/components";
 import { homeContent } from "@/content/home";
+import { BookCover } from "@/components/visual/BookCover";
 import { PhotoFrame } from "@/components/visual/PhotoFrame";
 import { siteConfig } from "@/config/site";
 
@@ -34,15 +35,7 @@ export default function HomePage() {
             </div>
           </div>
           <Card tone="blush" className="grid place-items-center p-4 sm:p-5">
-            <PhotoFrame
-              alt="Михаль Когаловски с новорождённым в роддоме"
-              className="aspect-[4/5] w-full max-w-[420px] lg:max-w-[500px]"
-              height={1363}
-              objectPosition="center"
-              priority
-              src={siteConfig.assets.michalHero}
-              width={1154}
-            />
+            <BookCover className="max-w-[300px] sm:max-w-[360px] lg:max-w-[420px]" priority />
           </Card>
         </div>
       </section>
@@ -105,7 +98,7 @@ export default function HomePage() {
         <div className="grid gap-6 md:grid-cols-[0.8fr_1fr]">
           <Card className="grid place-items-center p-4 sm:p-5">
             <PhotoFrame
-              alt="Книга «Роды с холодной головой» на столе"
+              alt={`Книга «${siteConfig.bookTitle}» на столе`}
               className="aspect-[4/3] w-full"
               height={1086}
               src={siteConfig.assets.bookOnTable}
